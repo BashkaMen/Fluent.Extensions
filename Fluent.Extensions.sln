@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluent.Extensions.Http", "Fluent.Extensions.Http\Fluent.Extensions.Http.csproj", "{CC863125-670E-4B03-AC66-EA9CB28F24DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC863125-670E-4B03-AC66-EA9CB28F24DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC863125-670E-4B03-AC66-EA9CB28F24DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC863125-670E-4B03-AC66-EA9CB28F24DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC863125-670E-4B03-AC66-EA9CB28F24DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8739E5A6-0AE8-4F4B-BF95-B00B4B19F74C}
+	EndGlobalSection
+EndGlobal
