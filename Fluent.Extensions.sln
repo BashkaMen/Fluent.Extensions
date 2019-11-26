@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluent.Extensions.Http", "Fluent.Extensions.Http\Fluent.Extensions.Http.csproj", "{CC863125-670E-4B03-AC66-EA9CB28F24DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fluent.Extensions.Http", "Fluent.Extensions.Http\Fluent.Extensions.Http.csproj", "{CC863125-670E-4B03-AC66-EA9CB28F24DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluent.Extensions.Tests", "Fluent.Extensions.Tests\Fluent.Extensions.Tests.csproj", "{D9F0F761-A4D4-4F07-B1DA-AC4AFFB4A447}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{CC863125-670E-4B03-AC66-EA9CB28F24DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC863125-670E-4B03-AC66-EA9CB28F24DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC863125-670E-4B03-AC66-EA9CB28F24DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9F0F761-A4D4-4F07-B1DA-AC4AFFB4A447}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9F0F761-A4D4-4F07-B1DA-AC4AFFB4A447}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9F0F761-A4D4-4F07-B1DA-AC4AFFB4A447}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9F0F761-A4D4-4F07-B1DA-AC4AFFB4A447}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
