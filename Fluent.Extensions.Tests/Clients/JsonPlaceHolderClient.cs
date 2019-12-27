@@ -25,8 +25,8 @@ namespace Fluent.Extensions.Tests.Clients
 
             var response = await _http.SendAsync(request)
                 .LogRequestAndResponseAsync(_logger)
-                .EnsureStatusCodeAsync()
-                .ToModelAsync<Todo[]>();
+                .EnsureSuccessStatusCodeAsync()
+                .FromJsonAsync<Todo[]>();
 
             return response;
         }
@@ -39,8 +39,8 @@ namespace Fluent.Extensions.Tests.Clients
 
             var response = await _http.SendAsync(request)
                 .LogRequestAndResponseAsync(_logger)
-                .EnsureStatusCodeAsync()
-                .ToModelAsync<Todo>();
+                .EnsureSuccessStatusCodeAsync()
+                .FromJsonAsync<Todo>();
 
             return response;
         }

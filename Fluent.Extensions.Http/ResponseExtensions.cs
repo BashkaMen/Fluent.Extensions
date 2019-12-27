@@ -8,6 +8,7 @@ namespace Fluent.Extensions.Http
 {
     public static class ResponseExtensions
     {
+        public static JsonSerializerSettings JsonSerializerSettings { get; set; }
         public static Func<HttpRequestMessage, Task<string>> RequestLogFormatter { get; set; }
         public static Func<HttpResponseMessage, Task<string>> ResponseLogFormatter { get; set; }
 
@@ -36,7 +37,17 @@ namespace Fluent.Extensions.Http
             };
         }
 
-        public static async Task<HttpResponseMessage> EnsureStatusCodeAsync(this Task<HttpResponseMessage> httpResponse)
+        public static async Task<HttpResponseMessage> EnsureSuccessResponseAsync(this Task<HttpResponseMessage> httpResponse, Func<HttpResponseMessage, Task<bool>> validator)
+        {
+            var response = await httpResponse;
+
+            if (!await validator(response))
+                throw new HttpRequestException("Response is not success");
+
+            return response;
+        }
+
+        public static async Task<HttpResponseMessage> EnsureSuccessStatusCodeAsync(this Task<HttpResponseMessage> httpResponse)
         {
             var response = await httpResponse;
 
@@ -45,12 +56,12 @@ namespace Fluent.Extensions.Http
             return response;
         }
 
-        public static async Task<T> ToModelAsync<T>(this Task<HttpResponseMessage> httpResponse)
+        public static async Task<T> FromJsonAsync<T>(this Task<HttpResponseMessage> httpResponse)
         {
             var response = await httpResponse;
             var body = await response.Content.ReadAsStringAsync();
 
-            return JsonConvert.DeserializeObject<T>(body);
+            return JsonConvert.DeserializeObject<T>(body, JsonSerializerSettings);
         }
 
         public static async Task<HttpResponseMessage> LogRequestAsync(this Task<HttpResponseMessage> httpResponse, ILogger logger)

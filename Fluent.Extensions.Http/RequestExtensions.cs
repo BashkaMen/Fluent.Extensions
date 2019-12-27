@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
 
 namespace Fluent.Extensions.Http
 {
@@ -12,10 +13,10 @@ namespace Fluent.Extensions.Http
             return request;
         }
 
-        public static HttpRequestMessage WithBody<T>(this HttpRequestMessage request, T body)
+        public static HttpRequestMessage WithJsonBody<T>(this HttpRequestMessage request, T body)
         {
             var json = JsonConvert.SerializeObject(body);
-            request.Content = new StringContent(json);
+            request.Content = new StringContent(json, Encoding.UTF8, "application/json");
 
             return request;
         }
