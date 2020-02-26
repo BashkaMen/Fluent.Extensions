@@ -51,7 +51,12 @@ namespace Fluent.Extensions.Http
         {
             var response = await httpResponse;
 
-            response.EnsureSuccessStatusCode();
+            if (!response.IsSuccessStatusCode)
+            {
+                var body = await response.Content.ReadAsStringAsync();
+                throw new HttpRequestException($"Bad response code {response.StatusCode}:\n{body}");
+            }
+            
 
             return response;
         }
